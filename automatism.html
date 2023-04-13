@@ -1,0 +1,211 @@
+<html>
+
+<head>
+    <title>Automatism-show</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+        @font-face {
+            font-family: "NotoSansTC-Regular";
+            src: url('fonts/NotoSansTC-Regular.otf') format("opentype");
+        }
+
+        @font-face {
+            font-family: "NotoSansTC-Light";
+            src: url('fonts/NotoSansTC-Light.otf') format("opentype");
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        #img-demo {
+            width: 100%;
+            height: 100%;
+            background-image: url("automatism/yazid_display-01-01.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            opacity: 0.5;
+        }
+
+        #main-display {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 1.0);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+
+            font-family: "NotoSansTC-Regular";
+        }
+
+        .content-div {
+            color: white;
+        }
+        
+        .content-div .title {
+            font-size: 30px;
+            padding-bottom: 32px;
+            letter-spacing: 3px;
+        }
+
+        #content-img {
+            width: 100%;
+            height: 600px;
+
+            position: absolute;
+            background-image: url("automatism/automatism-bottom.png");
+            background-size: contain;
+        }
+
+        #content-ch {
+            width: 340px;
+            height: 300px;
+            position: absolute;
+            top: 1380;
+            left: 60;
+            z-index: 3;
+
+            text-align: justify;
+        }
+
+        #content-ch .description {
+            font-family: "NotoSansTC-Light";
+            font-size: 14px;
+            line-height: 22px;
+            letter-spacing: 1px;
+
+            text-indent: -4px;
+        }
+
+        #content-en {
+            width: 360px;
+            height: 300px;
+
+            position: absolute;
+            top: 1380;
+            left: 440;
+            z-index: 3;
+
+            text-align: justify;
+        }
+
+        #content-en .description {
+            font-family: "NotoSansTC-Light";
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0px;
+        }
+
+        #content-qr {
+            width: 300px;
+            height: 400px;
+
+            position: absolute;
+            top: 1650;
+            left: 850;
+
+            text-align: justify;
+        }
+
+        #content-qr .description {
+            font-family: "NotoSansTC-Light";
+            font-size: 12px;
+            line-height: 20px;
+            letter-spacing: 0px;
+
+            transform-origin: left top;
+            transform: scale(0.9);
+        }
+
+        #content-qr .qr-image {
+            background-image: url("automatism/Yazid-Automatism-QR.png");
+            margin-top: 12px;
+
+            width: 160px;
+            height: 160px;
+
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        iframe {
+            border: none;
+        }
+    </style>
+</head>
+
+<!-- <body>
+    <div id="img-demo">
+    </div> -->
+
+    <main id="main-display">
+        <iframe src="automatism/index.html" width="1080" height="1350"></iframe>
+
+        <div id="content-ch" class="content-div">
+            <div class="title">自動主義</div>
+            <div class="description">《自動主義》是Yazid於以太鏈生成藝術平台ArtBlocks發表的長格式生成藝術作品。其靈感來自藝術家在一張空白畫布上無意識書寫所形成的自由表現。Yazid透過《自動主義》這件作品想嘗試給予機器一張同樣的空白畫布，去看看它的「頭腦」和「手」會徘徊於何處。<br />
+            <br />
+            這件作品探索了426版次的迭代輸出，邀請觀眾積極參與視覺輸出詮釋。其筆觸以各種混合的方向運動，如不規則曲線、直線、突然改變方向的轉折等，通過經典的隨機遊走演算法，同時避免與之前繪製的筆劃重疊。它本身沒有任何預先編寫的程式形式，但有趣的是，觀眾通常會在其生成圖像中知覺到符號與含義。<br />
+            <br />
+            那麼，你的心思徘徊於何處呢？在這些由機器遊走的圖像中，你看到了什麼形式、符號與意義呢？</div>
+        </div>
+
+        <div id="content-en" class="content-div">
+            <div class="title">Automatism</div>
+            <div class="description">
+                "Automatism" dis a long-form generative art work published by Yazid on the Ethereum blockchain generative art platform ArtBlocks. It is inspired by the free expression formed by the artist's unconscious writing on a blank canvas. Through the work "Automatism", Yazid wants to try to give the machine the same blank canvas to see where its ‘mind’ and ‘hand’ will wander.<br />
+                <br />
+                This work explores the iterative output of 426 editions, inviting audiences to interpretate its visual output. Its strokes move in a variety of mixed directions, such as irregular curves, straight lines, sudden changes in direction, etc., through a classic random walk algorithm, while avoiding overlapping with previously drawn strokes. It does not have any pre-programmed form itself, but interestingly, the viewer often perceives symbols and meanings in its generated images.<br />
+                <br />
+                So where is your mind wandering? In these images wandering by machines, what forms, symbols and meanings do you see?
+            </div>
+        </div>
+
+        <div id="content-qr" class="content-div">
+            <div class="description">
+                於 ArtBlocks 上查看完整 426 版作品<br />
+                View 426 editions on ArtBlocks
+            </div>
+            <div class="qr-image">
+
+            </div>
+        </div>
+
+        <!-- <div id="content-img">
+        </div> -->
+    </main>
+
+    <script>
+        // jquery on key down function
+        $(document).keydown(function (e) {
+            
+            if(e.originalEvent.key == 'q')
+            {
+                $('#main-display').css('display', 'none');
+                $('#img-demo').css('display', 'block');
+            }
+            else if(e.originalEvent.key == 'w')
+            {
+                $('#main-display').css('display', 'block');
+                $('#img-demo').css('display', 'none');
+            }
+            else if(e.originalEvent.key == 'e')
+            {
+                $('#main-display').css('display', 'block');
+                $('#img-demo').css('display', 'block');
+            }
+        });
+    </script>
+</body>
+
+</html>
