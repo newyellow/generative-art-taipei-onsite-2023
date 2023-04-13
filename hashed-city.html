@@ -1,0 +1,213 @@
+<html>
+
+<head>
+    <title>Automatism-show</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+        @font-face {
+            font-family: "NotoSansTC-Regular";
+            src: url('fonts/NotoSansTC-Regular.otf') format("opentype");
+        }
+
+        @font-face {
+            font-family: "NotoSansTC-Light";
+            src: url('fonts/NotoSansTC-Light.otf') format("opentype");
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        #img-demo {
+            width: 100%;
+            height: 100%;
+            background-image: url("hashed-city/yazid_display-01-02.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            opacity: 0.5;
+        }
+
+        #main-display {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 1.0);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+
+            font-family: "NotoSansTC-Regular";
+        }
+
+        #main-display iframe {
+            box-sizing: border-box;
+            padding: 100px;
+        }
+
+        .content-div {
+            color: white;
+        }
+        
+        .content-div .title {
+            font-size: 30px;
+            padding-bottom: 32px;
+            letter-spacing: 3px;
+        }
+
+        #content-img {
+            width: 100%;
+            height: 600px;
+
+            position: absolute;
+            background-image: url("automatism/automatism-bottom.png");
+            background-size: contain;
+        }
+
+        #content-ch {
+            width: 340px;
+            height: 300px;
+            position: absolute;
+            top: 1380;
+            left: 60;
+            z-index: 3;
+
+            text-align: justify;
+        }
+
+        #content-ch .description {
+            font-family: "NotoSansTC-Light";
+            font-size: 14px;
+            line-height: 22px;
+            letter-spacing: 1px;
+
+            text-indent: -4px;
+        }
+
+        #content-en {
+            width: 360px;
+            height: 300px;
+
+            position: absolute;
+            top: 1380;
+            left: 440;
+            z-index: 3;
+
+            text-align: justify;
+        }
+
+        #content-en .description {
+            font-family: "NotoSansTC-Light";
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0px;
+        }
+
+        #content-qr {
+            width: 300px;
+            height: 400px;
+
+            position: absolute;
+            top: 1650;
+            left: 850;
+
+            text-align: justify;
+        }
+
+        #content-qr .description {
+            font-family: "NotoSansTC-Light";
+            font-size: 12px;
+            line-height: 20px;
+            letter-spacing: 0px;
+
+            transform-origin: left top;
+            transform: scale(0.9);
+        }
+
+        #content-qr .qr-image {
+            background-image: url("hashed-city/yazid-hashed-cities-QR.png");
+            margin-top: 12px;
+
+            width: 160px;
+            height: 160px;
+
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        iframe {
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div id="img-demo">
+    </div> -->
+
+    <main id="main-display">
+        <iframe src="hashed-city/index.html" width="1080" height="1080"></iframe>
+
+        <div id="content-ch" class="content-div">
+            <div class="title">雜湊城市</div>
+            <div class="description">
+                《雜湊城市》生成一組極簡、抽象的建築量體，由參數決定不同的寬度、高度、透明度和圖案，組裝出觀者專屬的想像城市天際線景觀，每座城市也都有隨機的專屬城市節日。<br />
+                <br />
+                每個迭代有著白天或夜晚的原始背景，結合正在觀看的時區，即時影響這件作品中的天體運動。像是在以白天為背景的迭代裡，太陽只有在白天才看得到，並每分鐘更新一次位置。作品的獨特筆觸表現了Yazid對於演算法的最新發展，這種演算法生成模擬印刷瑕疵的紋理，每次即時更新時都能隨機化地賦予某種特徵。這件作品的美學深受早期電腦藝術家的繪圖幾作品所啟發，如Grace C. Hertlein的〈城市繪畫〉。</div>
+        </div>
+
+        <div id="content-en" class="content-div">
+            <div class="title">Hashed City</div>
+            <div class="description">
+                "Hashed Cities" generates a set of minimalist and abstract architectural volumes, with different widths, heights, transparency and patterns determined by parameters, assembling each viewer's exclusive imaginary city skyline landscape. Every city also features its own randonmized urban festival.<br />
+                <br />
+                Each iteration has an original background of day or night, combined with the time zone being viewed, to instantly affect the movement of celestial bodies within the piece. For example, in the daytime iteration, the sun is only visible during the day and updates its position every minute. The work's distinctive brushstrokes represent Yazid's latest developments in algorithms that generate textures mimicing print imperfections, randomized to give them a certain character each time they are updated in real time. The aesthetic of this work was inspired by the drawings of early computer artists, such as Grace C. Hertlein's "City Paintings”. 
+            </div>
+        </div>
+
+        <div id="content-qr" class="content-div">
+            <div class="description">
+                於 Tender.art 上查看完整 363 版作品<br />
+                View 363 editions on Tender.art
+            </div>
+            <div class="qr-image">
+
+            </div>
+        </div>
+
+        <!-- <div id="content-img">
+        </div> -->
+    </main>
+
+    <script>
+        // jquery on key down function
+        $(document).keydown(function (e) {
+            
+            if(e.originalEvent.key == 'q')
+            {
+                $('#main-display').css('display', 'none');
+                $('#img-demo').css('display', 'block');
+            }
+            else if(e.originalEvent.key == 'w')
+            {
+                $('#main-display').css('display', 'block');
+                $('#img-demo').css('display', 'none');
+            }
+            else if(e.originalEvent.key == 'e')
+            {
+                $('#main-display').css('display', 'block');
+                $('#img-demo').css('display', 'block');
+            }
+        });
+    </script>
+</body>
+
+</html>
