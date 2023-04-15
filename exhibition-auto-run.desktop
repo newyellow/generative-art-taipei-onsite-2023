@@ -1,3 +1,0 @@
-[Desktop Entry]
-Type=Application
-Exec=chromium-browser –kiosk http://127.0.0.1/exhibition/automatism.html
