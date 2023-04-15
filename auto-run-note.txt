@@ -1,2 +1,1 @@
 @unclutter -idle 0.1
-@chromium-browser --start-fullscreen --start-maximized --kiosk http://127.0.0.1/automatism.html
