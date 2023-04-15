@@ -18,6 +18,77 @@
             src: url('fonts/NotoSansTC-Light.otf') format("opentype");
         }
 
+        #content-ch {
+            width: 340px;
+            height: 300px;
+            position: absolute;
+            top: 1380;
+            left: 60;
+            z-index: 3;
+
+            text-align: justify;
+        }
+
+        #content-ch .description {
+            font-family: "NotoSansTC-Light";
+            font-size: 12px;
+            line-height: 22px;
+            letter-spacing: 1px;
+
+            text-indent: -4px;
+        }
+
+        #content-en {
+            width: 360px;
+            height: 300px;
+
+            position: absolute;
+            top: 1380;
+            left: 440;
+            z-index: 3;
+
+            text-align: justify;
+        }
+
+        #content-en .description {
+            font-family: "NotoSansTC-Light";
+            font-size: 12px;
+            line-height: 20px;
+            letter-spacing: 0px;
+        }
+
+        #content-qr {
+            width: 300px;
+            height: 400px;
+
+            position: absolute;
+            top: 1600;
+            left: 850;
+
+            text-align: justify;
+        }
+
+        #content-qr .description {
+            font-family: "NotoSansTC-Light";
+            font-size: 12px;
+            line-height: 20px;
+            letter-spacing: 0px;
+
+            transform-origin: left top;
+            transform: scale(0.9);
+        }
+
+        #content-qr .qr-image {
+            background-image: url("automatism/Yazid-Automatism-QR.png");
+            margin-top: 12px;
+
+            width: 160px;
+            height: 160px;
+
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
         body {
             overflow: hidden;
             background-color: black;
@@ -68,77 +139,6 @@
             background-size: contain;
         }
 
-        #content-ch {
-            width: 340px;
-            height: 300px;
-            position: absolute;
-            top: 1380;
-            left: 60;
-            z-index: 3;
-
-            text-align: justify;
-        }
-
-        #content-ch .description {
-            font-family: "NotoSansTC-Light";
-            font-size: 12px;
-            line-height: 22px;
-            letter-spacing: 1px;
-
-            text-indent: -4px;
-        }
-
-        #content-en {
-            width: 360px;
-            height: 300px;
-
-            position: absolute;
-            top: 1380;
-            left: 440;
-            z-index: 3;
-
-            text-align: justify;
-        }
-
-        #content-en .description {
-            font-family: "NotoSansTC-Light";
-            font-size: 12px;
-            line-height: 20px;
-            letter-spacing: 0px;
-        }
-
-        #content-qr {
-            width: 300px;
-            height: 400px;
-
-            position: absolute;
-            top: 1650;
-            left: 850;
-
-            text-align: justify;
-        }
-
-        #content-qr .description {
-            font-family: "NotoSansTC-Light";
-            font-size: 12px;
-            line-height: 20px;
-            letter-spacing: 0px;
-
-            transform-origin: left top;
-            transform: scale(0.9);
-        }
-
-        #content-qr .qr-image {
-            background-image: url("automatism/Yazid-Automatism-QR.png");
-            margin-top: 12px;
-
-            width: 160px;
-            height: 160px;
-
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
-
         iframe {
             border: none;
         }
@@ -150,7 +150,7 @@
     </div> -->
 
     <main id="main-display">
-        <iframe src="automatism/index.html" width="1080" height="1350"></iframe>
+        <iframe id="nft-artifact" src="automatism/index.html" width="1080" height="1350"></iframe>
 
         <div id="content-ch" class="content-div">
             <div class="title">自動主義</div>
@@ -188,24 +188,33 @@
 
     <script>
         // jquery on key down function
-        $(document).keydown(function (e) {
+        // $(document).keydown(function (e) {
             
-            if(e.originalEvent.key == 'q')
-            {
-                $('#main-display').css('display', 'none');
-                $('#img-demo').css('display', 'block');
-            }
-            else if(e.originalEvent.key == 'w')
-            {
-                $('#main-display').css('display', 'block');
-                $('#img-demo').css('display', 'none');
-            }
-            else if(e.originalEvent.key == 'e')
-            {
-                $('#main-display').css('display', 'block');
-                $('#img-demo').css('display', 'block');
-            }
+        //     if(e.originalEvent.key == 'q')
+        //     {
+        //         $('#main-display').css('display', 'none');
+        //         $('#img-demo').css('display', 'block');
+        //     }
+        //     else if(e.originalEvent.key == 'w')
+        //     {
+        //         $('#main-display').css('display', 'block');
+        //         $('#img-demo').css('display', 'none');
+        //     }
+        //     else if(e.originalEvent.key == 'e')
+        //     {
+        //         $('#main-display').css('display', 'block');
+        //         $('#img-demo').css('display', 'block');
+        //     }
+        // });
+
+        $(window).on('load', function () {
+            refreshLoop();
         });
+
+        function refreshLoop () {
+            document.getElementById('nft-artifact').contentWindow.DoRefresh();
+            setTimeout(refreshLoop, 20000);
+        }
     </script>
 </body>
 

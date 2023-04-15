@@ -522,7 +522,12 @@
         Rectangle.prototype.contains = function (a) { return a.x >= this.x - this.w && a.x < this.x + this.w && a.y >= this.y - this.h && a.y < this.y + this.h }; Rectangle.prototype.intersects = function (a) { return !(a.x - a.w > this.x + this.w || a.x + a.w < this.x - this.w || a.y - a.h > this.y + this.h || a.y + a.h < this.y - this.h) }; var Circle = function (a, b, c) { this.x = a; this.y = b; this.r = c * height * 2; this.rSquared = this.r * this.r }; Circle.prototype.contains = function (a) { return distSquared(this.x, this.y, a.x, a.y) <= this.rSquared };
         var Random = function () { this.useA = !1; var a = function (b) { var c = parseInt(b.substr(0, 8), 16), g = parseInt(b.substr(8, 8), 16), d = parseInt(b.substr(16, 8), 16), h = parseInt(b.substr(24, 8), 16); return function () { c |= 0; g |= 0; d |= 0; h |= 0; var e = (c + g | 0) + h | 0; h = h + 1 | 0; c = g ^ g >>> 9; g = d + (d << 3) | 0; d = d << 21 | d >>> 11; d = d + e | 0; return (e >>> 0) / 4294967296 } }; this.prngA = new a(tokenData.hash.substr(2, 32)); this.prngB = new a(tokenData.hash.substr(34, 32)); for (a = 0; 1E6 > a; a += 2)this.prngA(), this.prngB() };
         Random.prototype.random_dec = function () { return (this.useA = !this.useA) ? this.prngA() : this.prngB() }; Random.prototype.random_num = function (a, b) { return a + (b - a) * this.random_dec() }; Random.prototype.random_int = function (a, b) { return Math.floor(this.random_num(a, b + 1)) }; Random.prototype.random_bool = function (a) { return this.random_dec() < a }; Random.prototype.random_choice = function (a) { return a[this.random_int(0, a.length - 1)] };
-        Random.prototype.weighted_choice = function (a) { var b = [], c; for (c in a) b = b.concat(Array(a[c][1]).fill(a[c][0])); return this.random_choice(b) }; Random.prototype.weighted_index = function (a) { for (var b = 0, c = 0; c < a.length; c++)b += a[c]; b *= this.random_dec(); for (c = 0; c < a.length; c++) { if (b < a[c]) return c; b -= a[c] } return a.length - 1 };</script>
+        Random.prototype.weighted_choice = function (a) { var b = [], c; for (c in a) b = b.concat(Array(a[c][1]).fill(a[c][0])); return this.random_choice(b) }; Random.prototype.weighted_index = function (a) { for (var b = 0, c = 0; c < a.length; c++)b += a[c]; b *= this.random_dec(); for (c = 0; c < a.length; c++) { if (b < a[c]) return c; b -= a[c] } return a.length - 1 };
+
+        function DoRefresh () {
+            window.location.reload();
+        }
+    </script>
     <style type="text/css">
         html {
             height: 100%;
